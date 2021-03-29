@@ -1,0 +1,36 @@
+apply plugin: 'groovy'
+sourceSets {
+    main{
+      groovy{
+            srcDir 'src/main/groovy'
+        }
+//        java{
+//            srcDir 'src/main/java'
+//        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
+repositories {
+    jcenter()
+    mavenCentral()
+    google()
+}
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    //常用io操作
+    implementation "commons-io:commons-io:2.6"
+
+    // Android DSL  Android编译的大部分gradle源码
+    //implementation 'com.android.tools.build:gradle-api:4.1.1'
+    //引入android环境
+    implementation 'com.android.tools.build:gradle:4.1.1'
+
+    implementation 'org.apache.directory.studio:org.apache.commons.io:2.4'
+    //ASM
+    implementation 'org.ow2.asm:asm:7.1'
+    implementation 'org.ow2.asm:asm-util:7.1'
+    implementation 'org.ow2.asm:asm-commons:7.1'
+}
